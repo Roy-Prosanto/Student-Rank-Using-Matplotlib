@@ -1,0 +1,93 @@
+import  matplotlib.pyplot as plt
+from matplotlib import style
+import numpy as np
+import random
+import  matplotlib.image  as  mping
+
+plt.figure(figsize=(12,7))
+plt.subplot(2,2,1)
+from matplotlib import style
+x = [10,20,40]
+y =[15,30,45]
+style.use("ggplot")
+plt.title("Data of valur")
+plt.plot(x,y,color= "r",marker="o",linestyle=":",linewidth = 2)
+plt.legend(["Group Work"],loc = 4)
+plt.grid(color="k",linestyle="-",linewidth ="2")
+
+plt.subplot(2,2,2)
+import numpy as np
+import random
+
+frist_student  =np.random.randint(1,15,20)
+secend_student= np.random.randint(2,15,20 )
+print(frist_student)
+print(secend_student)
+plt.title("Student Rank")
+plt.hist(frist_student,rwidth=.9,color="r")
+plt.hist(secend_student,rwidth=.9,color="g")
+#plt.plot(frist_student,secend_student,color="r",mark= "o",linewidtg=2,linestyle=".")
+plt.grid()
+plt.legend(["frist_student"],loc = 4)
+plt.legend(["secend_student"],loc = 2)
+
+
+
+
+plt.subplot(2,2,3)
+classes = ["Python", "R", "AI", "ML", "DS"]
+class1_students = [15, 10, 20, 27, 10] # out of 100 student in each class
+class2_students = [47, 25, 16, 19, 10]
+class3_students = [9, 7, 15, 18, 13]
+classes_index = np.arange(len(classes))
+width = 0.2
+plt.title("Student list of Educatiuon ")
+plt.bar(classes_index,class1_students ,width,color="g",label="class1_students")
+plt.bar(classes_index+width,class2_students ,width,color= "r",label="class2_students")
+plt.bar(classes_index+width+width,class3_students ,width,color="b",label="class3_students")
+plt.xticks(classes_index+width,classes)
+plt.ylabel("Student")
+plt.xlabel("Classes")
+plt.legend()
+
+
+plt.subplot(2,2,4)
+classes = ["Python", "R", "AI", "ML", "DS"]
+class1_students = [15, 10, 20, 27, 10]
+exe= [.01,.5,.01,.01,0.01]
+colors= ["c","r","g","b","y"]
+wedgeprops = {"linewidth": 4, 'width':3, "edgecolor":"k"} # Width = 1
+plt.pie(
+        class1_students,
+        labels = classes,
+        explode = exe,  
+        colors = colors,
+        autopct = "%0.2f%%",
+        pctdistance = 0.6,
+        shadow =True,
+        labeldistance = 1.6,
+        startangle = 270,
+        radius = 1,
+        counterclock = True,
+        wedgeprops = wedgeprops,
+
+        center=(2, 3),
+        frame=True,
+        rotatelabels=True
+        )
+
+plt.savefig("G:\\Project\\numpy\hello.png",dpi= 100, facecolor= "w")
+plt.show ()
+
+# Example  07 ( photo editor and save photo  )
+import  matplotlib.image  as  mping
+img=mping.imread("pig.png")
+plt.figure(figsize=(10,6))
+plt.axis()
+plt.imshow(img)
+
+plt.colorbar()
+
+
+
+plt.show()
